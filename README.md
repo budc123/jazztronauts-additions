@@ -1,6 +1,19 @@
+# Jazztronauts Additions
+*Epic "fork of a fork" moment.*
+
+### Info about this fork
+This fork aims to add additional features to Jazztronauts.
+`(Add actual list of features here when i actually add them).`
+
+Mainly made to add some stuff that i thought would be cool, but also partly as practice for Gmod modding.
+
+
+
+# Original Description
+
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/N4N6H7ZH)
 
-# Jazztronauts
+## Jazztronauts
 Videogames are the poison, Jazztronauts is the cure.
 
 
