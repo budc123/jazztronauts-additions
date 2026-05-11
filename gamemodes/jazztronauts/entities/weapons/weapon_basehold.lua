@@ -220,7 +220,7 @@ local function UpdateFont()
 	-- Font stored at jazztronauts/resource/fonts/jazzwep.ttf
 	-- Icon assets in jazztronauts/other/wepicons (git repo only)
 	surface.CreateFont("JazzWep",{
-		font = "jazzicons",
+		font = "jazzicons-new",
 		size = fontsize,
 		weight = 500,
 		antialias = true,
@@ -229,7 +229,7 @@ local function UpdateFont()
 	surface.CreateFont("JazzWepBlur",{
 		blursize = 8,
 		scanlines = 3,
-		font = "jazzicons",
+		font = "jazzicons-new",
 		size = fontsize,
 		weight = 500,
 		antialias = true,

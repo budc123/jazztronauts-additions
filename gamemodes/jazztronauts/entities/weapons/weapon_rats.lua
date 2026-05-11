@@ -7,8 +7,11 @@ SWEP.PrintName				= jazzloc.Localize("jazz.weapon.rats")
 SWEP.Slot					= 4
 SWEP.Category				= "#jazz.weapon.category"
 SWEP.Purpose				= "#jazz.weapon.rats.desc.short"
-SWEP.WepSelectIcon			= Material( "entities/weapon_rats.png" )
 SWEP.AutoSwitchFrom			= false
+
+SWEP.WepSelectIcon = "g"
+SWEP.WepSelectColor = Color(64,150,255)
+SWEP.AutoIconAngle = Angle(125, -20, 40)
 
 SWEP.ViewModel				= "models/weapons/c_pistol.mdl"
 SWEP.WorldModel				= "models/weapons/w_pistol.mdl"
@@ -44,7 +47,7 @@ local origView				= Vector(0,0,64)
 local origViewCrouch		= Vector(0,0,28)
 
 -- List this weapon in the store
-local storeRats = jstore.Register(SWEP, 1 --[[100000]], { type = "tool" })
+local storeRats = jstore.Register(SWEP, 1000 --[[100000]], { type = "tool" })
 
 
 -- Ant Strength Upgrade
@@ -106,7 +109,7 @@ function SWEP:Deploy()
 
 end
 
-function SWEP:DrawWeaponSelection(x, y, w, h, alpha)
+/*function SWEP:DrawWeaponSelection(x, y, w, h, alpha) -- Using font icon now
 	surface.SetDrawColor(255, 255, 255, alpha)
 	if self.WepSelectIcon then
 		surface.SetMaterial(self.WepSelectIcon)
@@ -116,7 +119,7 @@ function SWEP:DrawWeaponSelection(x, y, w, h, alpha)
 
 	surface.DrawTexturedRectUV(x + w / 2 - 128, y + h / 2 - 64, 256, 128, 0, 0.25, 1, 0.75)
 	self:PrintWeaponInfo(x + w + 20, y + h, alpha)
-end
+end*/
 
 /*function SWEP:Cleanup()
 	
@@ -194,6 +197,13 @@ function SWEP:ShootEffects()
 	if IsValid(owner) then
 		owner:MuzzleFlash()
 		owner:SetAnimation( PLAYER_ATTACK1 )
+		if CLIENT then
+			if self.SizeMultiplier == 1 then
+				self:EmitSound( Sound( "items/ammocrate_close.wav" ), 100, 70 )
+			else
+				self:EmitSound( Sound( "items/ammocrate_open.wav" ), 100, 70 )
+			end
+		end
 	end
 end
 
