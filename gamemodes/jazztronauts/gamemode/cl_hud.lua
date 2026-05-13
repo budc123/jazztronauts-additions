@@ -159,7 +159,7 @@ local function DrawNoteCount()
 		text = "+"
 		color = green
 	end
-	text = text .. tostring( math.floor( amt - VisualAmount ) )
+	text = text .. string.Comma( math.floor( amt - VisualAmount ) )
 
 	if amt - VisualAmount ~= 0 then
 		draw.DrawText( text, "JazzNoteFill", ScrW() - distFromSide, bgHeight + ScreenScale(6), color, TEXT_ALIGN_RIGHT)
