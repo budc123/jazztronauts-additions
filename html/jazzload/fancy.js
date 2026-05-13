@@ -1,6 +1,23 @@
 const trolleyZ = Number( window.getComputedStyle(document.getElementById("trolley")).getPropertyValue('z-index') )
 const scrollers = document.getElementById("scrollers")
 
+const tips = [ // Loading screen tips
+"You can press use on the security monitor next to the map selector to go back to the previously displayed map",
+"Use alt fire with the Portable Bus Stop on the sign next to level changes to set that level as the destination",
+"The buttons behind the prop vomiter curtain can be used to set the speed of the prop vomiter",
+"Stuck in a wall? The Personal Shrinking Device can sometimes get you out of a tricky spot",
+"Sometimes the prop vomiter will vomit a live version of a snatched NPC"
+] // Nothing really that entertaining, these are maninly just to explain some "hidden" features
+
+function updateTip(){
+	let tip = tips[Math.floor(Math.random() * tips.length)];
+	document.getElementById("tiptext").textContent = tip;
+
+}
+
+updateTip()
+setInterval(updateTip, 4000)
+
 function makeScroller(className = "") {
 	const tag = document.createElement("div");
 	if (className) tag.className = className;
